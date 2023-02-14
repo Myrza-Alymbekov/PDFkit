@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Магазин выпечки</title>
+    <style>html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+html {
+    height: 100%;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+</style>
+  <style>
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+]
+
+body {
+  margin: 0;
+}
+]
+main {
+  display: block;
+}
+
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+
+a {
+  background-color: transparent;
+}
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+small {
+  font-size: 80%;
+}
+
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+
+img {
+  border-style: none;
+}
+
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+
+
+progress {
+  vertical-align: baseline;
+}
+
+
+
+textarea {
+  overflow: auto;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+</style>
+      <style>* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Philosopher Regular';
+  src: local('Philosopher');
+  src: url(../font/Philosopher-Regular.ttf)
+
+}
+
+html {
+  font-family: 'Roboto';
+}
+
+@font-face {
+  font-family: 'Roboto Regular';
+  src: local('Roboto');
+  src: url('../font/Roboto-Regular.eot');
+  src: url('../font/Roboto-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../font/Roboto-Regular.woff') format('woff'),
+  url('../font/Roboto-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  }
+
+@font-face {
+  font-family: 'Roboto Bold';
+  src: url('../font/Roboto-Bold.eot');
+  src: url('../font/Roboto-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../font/Roboto-Bold.woff') format('woff'),
+  url('../font/Roboto-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  }
+
+body {
+  background-color: #ffe2b0;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+nav {
+  margin-bottom: 20px;
+}
+
+ul {
+  text-align: center;
+  list-style-type: none;
+  padding: 0px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+li {
+  display: inline;
+  margin-right: 100px;
+}
+
+li:last-child {
+  margin-right: 0;
+}
+
+.section-about {
+  height: 640px;
+  background: url(../img/Photo.jpg) center/cover no-repeat;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.section-about__block {
+  width: 420px;
+  height: 190px;
+  background: linear-gradient(
+    180deg,
+    rgba(244, 213, 178, 0.8) 0%,
+    rgba(234, 156, 65, 0.8) 100%
+  );
+  position: absolute;
+  top: 54%;
+  left: 50%;
+  padding-top: 15px;
+}
+
+.section-about__border {
+  border: 1px solid black;
+  height: 160px;
+  width: 390px;
+  margin: 0px auto;
+  padding: 17px 0 0 28px;
+  text-align: left;
+}
+
+.section-about__title {
+  font-size: 36px;
+  margin: 0px;
+  margin-bottom: 9px;
+  font-family: 'Philosopher Regular';
+}
+
+.section-about__text {
+  font-size: 12px;
+  margin: 0px;
+}
+
+.section-description {
+  margin-bottom: 20px;
+}
+
+.section-description__icon-box {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section-description__icon-box img {
+  margin-right: 76px;
+}
+
+.section-description__icon-box img:last-child {
+  margin-right: 0px;
+}
+
+.section-description__title {
+  font-size: 96px;
+  margin: 0px;
+  text-align: center;
+  font-family: 'Philosopher Regular';
+}
+
+.red {
+  color: #f15840;
+}
+
+.section-description__text {
+  font-size: 18px;
+  margin: 0px;
+  text-align: center;
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.section-map {
+  margin-bottom: 20px;
+}
+
+.section-map__title {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 36px;
+  font-family: 'Philosopher Regular';
+}
+
+iframe {
+  display: block;
+  margin: 0 auto;
+}
+
+hr {
+  border: none;
+  border: 1px solid #999;
+  width: 1024px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+footer {
+  height: 80px;
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+}
+
+
+body {
+  display: block;
+}</style>
+
+    <meta name="description" content="The best bakery in the city" />
+  </head>
+  <body>
+    <header>
+      <img src="{% static 'images/photka.svg' %}" alt="Logo" />
+    </header>
+    <nav>
+      <ul>
+        <li><a href="">О НАС</a></li>
+        <li><a href="">НОВОСТИ</a></li>
+        <li><a href="">МЕНЮ</a></li>
+        <li><a href="">КОНТАКТЫ</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section class="section-about">
+        <div class="section-about__block">
+          <div class="section-about__border">
+            <h1 class="section-about__title">Специальный заказ</h1>
+            <p class="section-about__text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Perspiciatis repellat veritatis nesciunt error quidem omnis ut
+              officiis quae iure laboriosam quibusdam distinctio blanditiis
+              asperiores velit eveniet, ipsum maxime dolor magni unde quidem
+              omnis ut officiis quae iure laboriosam quibusdam distinctio
+              blanditiis asperiores velit eveniet, ipsum maxime dolor magni unde
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section-description">
+        <div class="section-description__icon-box">
+          <img src="icons/03-icon.svg" alt="" />
+          <img src="icons/02-icon.svg" alt="" />
+          <img src="icons/01-icon.svg" alt="" />
+        </div>
+        <div class="section-description__text-box">
+          <h2 class="section-description__title">
+            Выпечка - <span class="red">это</span> вкусно.
+          </h2>
+        </div>
+        <p class="section-description__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore quas
+          cupiditate porro harum, recusandae laborum totam est nostrum, velit
+          distinctio, repellat beatae officia enim saepe. Quis repellendus non,
+          architecto veniam reprehenderit aliquam enim repudiandae excepturi
+          repellat ex odio quod a quidem tempora nam, animi aperiam doloremque
+          dignissimos aliquid voluptatem ab vitae saepe exercitationem? Expedita
+          veritatis necessitatibus laborum laboriosam voluptatibus excepturi
+          incidunt, autem odio maiores labore nihil earum beatae laudantium,
+          quasi cumque, quas omnis quis! Assumenda vitae ut consequatur unde
+          natus inventore ad fugiat, enim eius quod laborum, voluptas molestiae
+          sapiente nemo, totam sit. Fugiat et exercitationem, harum magni quidem
+          non.
+        </p>
+      </section>
+      <section>
+        <h3 class="section-map__title">Заказать</h3>
+
+      </section>
+    </main>
+    <footer>
+      <nav>
+        <hr />
+        <ul>
+          <li><a href="">О НАС</a></li>
+          <li><a href="">НОВОСТИ</a></li>
+          <li><a href="">МЕНЮ</a></li>
+          <li><a href="">КОНТАКТЫ</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>

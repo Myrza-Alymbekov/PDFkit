@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- <style>-->
+<!--   body {-->
+<!--    background-image: url(http://localhost:8000/media/avatar/avatar.jpeg);-->
+<!--    background-size: 10%;-->
+<!--   }-->
+<!--  </style>-->
+
+<body>
+<div class="container">
+
+    <th><a href="{% url 'pdf' %}" style="margin-top:25px; margin-right:50px;" type="submit" target="_blank">Open in PDF</a> </th>
+<img align="center" src="http://localhost:8000/static/images/photka.svg" alt="Photo">
+        <h1 class="text-center mb-5 mt-5">Список студентов</h1>
+
+        <table class="table table-bordered border-primary">
+          <thead>
+            <tr>
+              <th scope="col">Photo</th>
+              <th scope="col">Name</th>
+              <th scope="col">Age</th>
+              <th scope="col">Birth Place</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for user in users %}
+            <tr>
+              <td><img height="80px" width="80px" src="http://localhost:8000/media/avatar/telegram.jpeg"></td>
+              <td>{{ user.name }}</td>
+              <td>{{ user.age }}</td>
+              <td>{{ user.place_of_birth }}</td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+    </div>
+</body>
+
+{% endblock %}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <title>Myrza CV</title>
+
+
+    <style> body {
+    background-color: #f1f1f1;
+    color: #0f141e ;
+    font-size: 16px;
+    font-weight: normal ;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.avatar {
+    width: 150px ;
+    border-radius: 25px;
+    box-shadow: 4px 4px 14px rgba(0, 0, 0, 025);
+}
+
+.info {
+    position: relative;
+    display: flex;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+@media (max-width: 600px) {
+    .info {
+        text-align: center;
+        display: block;
+    }
+}
+
+.info2 {
+    margin-left: 25px;
+}
+
+
+
+.info p {
+    color: #86898f;
+    margin: 0;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+
+}
+
+.PDF {
+    position:absolute;
+    top: 5px;
+    right: 20px;
+    background-color: #f1f1f1;
+    font-size: small;
+    font-family:Arial, Helvetica, sans-serif ;
+    color:rgb(37, 99, 154);
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+.PDF:hover {
+    text-decoration: underline;
+}</style>
+</head>
+
+<body>
+    
+    <div class="container" style="margin-bottom: 200px;">
+    <div class="info">
+    <img src="photo.jpeg" alt="My photo"
+    class="avatar" >
+   
+    <div class="info2">
+    <h2 style="margin-bottom: 10px;">Мырза Алымбеков</h2>
+    <p style="margin-bottom: 25px; color: #0f141e;"><strong>Python Backend Developer</strong></p>
+    <p>E-mail: myrza.bakytbekovich@gmail.com</p>
+    <p>Phone: +996 557 06 06 39 (Telegram, WhatsApp)</p>
+    <a class="PDF" href="{% url 'pdf' %}" target="_blank">Скачать PDF</a>
+
+    </div>
+    </div>
+    <h3>Обо мне</h3>
+    <p>Успешно окончил курсы по бэкенд-разработке в Codify Academy. Там же прохожу стажировку. 
+    Пишем сайт по продаже мёда, где я ответственен за разработку серверной части. 
+    Работаю тех.поддержкой в Codify Academy. С большим интересом изучаю новые IT-продукты. Проживаю в Бишкеке.</p>
+
+    <hr>
+    <h3>Навыки</h3>
+    <p> Python, SQL, Django, REST framework, Flask, Docker, Git, PostgreSQL, AWS, Английский-B1 </p>
+    <hr>
+    <h3>Опыт до разработки</h3>
+    <ul style="padding-left: 20px ;">
+    <li> Инженер ЦСРЗА, ОАО "НЭСК", январь – август, 2022 г.</li>
+    <li> Электрослесарь по ремонту ГПМ, ТЭЦ г.Бишкек, октябрь, 2018 - декабрь, 2022 г.</li>
+    </ul>
+    <hr>
+    <h3> Образование</h3>
+    <p> КГТУ, Магистр по специальности "Релейная защита и автоматизация"  сентябрь, 2018 – июнь, 2020 г.</p>
+    <p> КГТУ, Бакалавр по специальности "Релейная защита и автоматизация"  сентябрь, 2014 – июнь, 2018 г.</p>
+</div>
+</body>
+</html> 

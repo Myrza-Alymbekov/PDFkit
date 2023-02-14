@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+<div class="container">
+
+<img align="center" src="http://127.0.0.1:8000/static/images/photka.svg" alt="Photo">
+        <h1 class="text-center mb-5 mt-5">Список студентов</h1>
+
+        <table class="table table-bordered border-primary">
+          <thead>
+            <tr>
+              <th scope="col">Photo</th>
+              <th scope="col">Name</th>
+              <th scope="col">Age</th>
+              <th scope="col">Birth Place</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for user in users %}
+            <tr>
+              <td><img height="80px" width="80px" src="{{ user.image.path }}"></td>
+              <td>{{ user.name }}</td>
+              <td>{{ user.age }}</td>
+              <td>{{ user.place_of_birth }}</td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+    </div>
+
+
+{% endblock %}

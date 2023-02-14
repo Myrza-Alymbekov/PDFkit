@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+
+
+  <h1>Добавить ЮЗЕРА</h1>
+
+      <form enctype="multipart/form-data" method="post" id="user_form" novalidate=""><input type="hidden" name="csrfmiddlewaretoken" value="aTYrQqqzkUnQvYETUvPMyNmZvahY5BKep5mLSRe9RvVN7YFR91LB2sRsXLxmR6SO">
+{% csrf_token %}
+          <div>
+              <fieldset class="module aligned ">
+                  <div class="form-row field-name">
+
+
+                <div>
+
+
+                        <label class="required" for="id_name">Name:</label>
+
+                            <input type="text" name="name" value="Adil" class="vTextField" maxlength="30" required="" id="id_name">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-age">
+
+
+                <div>
+
+
+                        <label class="required" for="id_age">Age:</label>
+
+                            <input type="number" name="age" value="24" class="vIntegerField" required="" id="id_age">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-place_of_birth">
+
+
+                <div>
+
+
+                        <label class="required" for="id_place_of_birth">Place of birth:</label>
+
+                            <input type="text" name="place_of_birth" value="Bishkek" class="vTextField" maxlength="15" required="" id="id_place_of_birth">
+
+
+
+                </div>
+
+        </div>
+
+        <div class="form-row field-image">
+
+
+                <div>
+
+
+                        <label for="id_image">Photo:</label>
+
+                            <input type="file" name="image" accept="image/*" id="id_image">
+                </div>
+
+        </div>
+</fieldset>
+<div class="submit-row">
+<input type="submit" value="Add User" class="btn btn-primary" name="_save">
+</div>
+    <script id="django-admin-form-add-constants" src="/static/admin/js/change_form.js" async="">
+    </script>
+
+<script id="django-admin-prepopulated-fields-constants" src="/static/admin/js/prepopulate_init.js" data-prepopulated-fields="[]">
+</script>
+
+</div>
+</form>
+{% endblock %}
